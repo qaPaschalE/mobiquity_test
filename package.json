@@ -22,6 +22,7 @@
     "build": "node build",
     "build:watch": "nodemon --watch build.js --watch templates -e js,md,html build.js",
     "start": "node index",
+    "test_paschal": "mocha",
     "test": "node test/app"
   },
   "dependencies": {
@@ -30,8 +31,10 @@
     "marked": "^0.8.0"
   },
   "devDependencies": {
+    "chai": "^4.3.4",
     "Faker": "~0.7.2",
     "husky": "^4.2.2",
+    "mocha": "^9.0.2",
     "nodemon": "^2.0.2",
     "pupa": "^2.0.1",
     "rosie": "~2.0.1",
