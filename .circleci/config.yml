@@ -1,7 +1,7 @@
 version: 2.1
 jobs:
   build:
-    working_directory: ~/public
+    working_directory: ~/jsonplaceholder
     docker:
       - image: circleci/node:10.15.3
     steps:
@@ -26,7 +26,7 @@ jobs:
           name: test
           command: npm run test_paschal
       - store_artifacts:
-          path: test-result.xml
+          path: test/test-result.xml
           prefix: tests
       - store_artifacts:
           path: coverage
