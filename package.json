@@ -15,14 +15,14 @@
   ],
   "homepage": "http://jsonplaceholder.typicode.com",
   "repository": {
-    "type": "git"
-    
+    "type": "git",
+    "url": "https://github.com/typicode/jsonplaceholder.git"
   },
   "scripts": {
     "build": "node build",
     "build:watch": "nodemon --watch build.js --watch templates -e js,md,html build.js",
     "start": "node index",
-    "test_paschal": "mocha",
+    "test_paschal": "istanbul cover _mocha -- -R spec test/p_app.js --reporter mochawesome",
     "test": "node test/app"
   },
   "dependencies": {
@@ -34,7 +34,9 @@
     "chai": "^4.3.4",
     "Faker": "~0.7.2",
     "husky": "^4.2.2",
+    "istanbul": "^0.4.5",
     "mocha": "^9.0.2",
+    "mochawesome": "^6.2.2",
     "nodemon": "^2.0.2",
     "pupa": "^2.0.1",
     "rosie": "~2.0.1",
