@@ -4,8 +4,11 @@ jobs:
     working_directory: ~/jsonplaceholder
     docker:
       - image: circleci/node:10.15.3
+    environment:
+      TEST_RESULTS: /tmp/test-results
     steps:
       - checkout
+      - run: mkdir -p $TEST_RESULTS
       - run:
           name: update-npm
           command: "sudo npm install -g npm@latest"
@@ -26,10 +29,12 @@ jobs:
           name: test
           command: npm run test_paschal
       - store_artifacts:
-          path: test-result.xml
-          prefix: tests
-      - store_artifacts:
           path: coverage
           prefix: coverage
+
+      - store_artifacts:
+          path: /tmp/test-results
+          destination: raw-test-output
+
       - store_test_results:
-          path: test
+          path: /tmp/test-results
