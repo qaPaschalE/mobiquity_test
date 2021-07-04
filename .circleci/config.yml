@@ -20,7 +20,7 @@ jobs:
             - ./node_modules
       - run:
           name: start_server
-          command: node index.js
+          command: npm run start
       - run:
           name: test
           command: npm run test_paschal
