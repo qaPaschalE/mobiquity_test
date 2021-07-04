@@ -33,10 +33,7 @@ jobs:
           prefix: coverage
 
       - store_artifacts:
-          path: mochawesome-report
-          prefix: rmochawesome-report
-
-      - store_artifacts:
+          path: /tmp/test-results
           destination: raw-test-output
 
       - store_test_results:
